@@ -9,4 +9,3 @@ the *general public*.
 
 You can browse trees based on their **name** (e.g. Beech Tree).
 
-Amrita testing commit
