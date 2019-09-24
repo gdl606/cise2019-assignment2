@@ -148,12 +148,8 @@
                 </div>
                  <h6>Price<h6>
                 <div>
-                    <select id="price">
-                      <option value="">Choose a price...</option>
-                      <option value=""><$15</option>
-                      <option value="">$15-$20</option>
-                      <option value="">>$$20</option>
-                    </select>
+                      <input type="range" min="1" max="100" value="50" class="slider" id="price">
+                      <p>Less than: $<span id="slider_label"></span></p>
                 </div>
                 <br>
                 <button id="filter-search">Search</button>
@@ -205,7 +201,7 @@
                     </a>
                 </div>
                 <div class="row">
-                    <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="col-lg-4 col-md-6 mb-4" id="tree-cards">
                         <div class="card h-100">
                             <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
                             <div class="card-body">
