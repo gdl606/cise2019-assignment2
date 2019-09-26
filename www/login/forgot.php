@@ -1,5 +1,5 @@
 <?php
-	require 'config.php';
+	require '../data/config.php';
 
 	if(isset($_POST['forgotpass'])) {
 		$errMsg = '';

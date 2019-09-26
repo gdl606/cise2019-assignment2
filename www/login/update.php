@@ -1,5 +1,5 @@
 <?php
-	require 'config.php';
+	require '../data/config.php';
 	if(empty($_SESSION['name']))
 		header('Location: login.php');
 
