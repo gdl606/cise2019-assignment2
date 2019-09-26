@@ -1,5 +1,7 @@
+# For backup files that are created by Vim.
 *~
-bootstrap-4.3.1-dist/
-public_html/.vs/
-public_html/vendor/
+
+# Folders containing external packages used in our project.
+vendor/
+jquery*/
 
