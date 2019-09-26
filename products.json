@@ -1,0 +1,70 @@
+// test json to get cart working
+
+{
+  "items": [
+    {
+      "sys": { "id": "1" },
+      "fields": {
+        "title": "laurel tree",
+        "price": 10.99,
+        "image": { "fields": { "file": { "url": "./public_html/img/laurel.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "2" },
+      "fields": {
+        "title": "oak tree",
+        "price": 12.99,
+        "image": { "fields": { "file": { "url": "./public_html/img/oak.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "3" },
+      "fields": {
+        "title": "pine tree",
+        "price": 12.99,
+        "image": { "fields": { "file": { "url": "./public_html/img/cypress.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "4" },
+      "fields": {
+        "title": "japanese maple tree",
+        "price": 22.99,
+        "image": { "fields": { "file": { "url": "./public_html/img/japmaple.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "5" },
+      "fields": {
+        "title": "peach tree",
+        "price": 88.99,
+        "image": { "fields": { "file": { "url": "./public_html/img/peach.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "6" },
+      "fields": {
+        "title": "dwarf apple tree",
+        "price": 32.99,
+        "image": { "fields": { "file": { "url": "./public_html/img/dwarfapple.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "7" },
+      "fields": {
+        "title": "kauri tree",
+        "price": 45.99,
+        "image": { "fields": { "file": { "url": "./public_html/img/kauri.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "8" },
+      "fields": {
+        "title": "nikau palm",
+        "price": 33.99,
+        "image": { "fields": { "file": { "url": "./public_html/img/nikau.jpg" } } }
+      }
+    }
+  ]
+}
