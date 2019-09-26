@@ -1,7 +1,7 @@
 # For backup files that are created by Vim.
 *~
 
-# Folders containing external packages used in our project.
+# Folder containing external packages used in our project.
+# Need to commit the jquery folder since we are unable to install it through Composer.
 vendor/
-jquery*/
 
