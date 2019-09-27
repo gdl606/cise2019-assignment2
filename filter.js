@@ -40,6 +40,7 @@ document.getElementById("filter-search").addEventListener("click", function() {
       removeCard();
       for (const tree of tree_list) {
         console.log(tree);
+        createTreeCard(tree["name"], tree["photo"], tree["price"], tree["description"]);
       }
     });
 });
@@ -51,7 +52,7 @@ document.getElementById("filter-search").addEventListener("click", function() {
 function createTreeCard(tree_name, tree_image_src, tree_price, tree_description) { // TODO: Add an average rating parameter.
   const tree_card = document.createElement("div");
   tree_card.className = "card h-100"
-  document.getElementById("tree-cards").appendChild(card);
+  document.getElementById("tree-cards").appendChild(tree_card);
 
   addTreeImage(tree_card, tree_image_src, tree_name);
   addCardBody(tree_card, tree_name, tree_price, tree_description);
@@ -111,7 +112,7 @@ function addCardFooter(tree_card) {
   // TODO: Dynamically calculate a star rating.
   // FIXME: Underneath is a static rating of 4 stars.
   stars.innerHTML = "&#9733; &#9733; &#9733; &#9733; &#9734;";
-  footer.addChild(stars);
+  footer.appendChild(stars);
 }
 
 function calculateStarRating(average_rating) {
