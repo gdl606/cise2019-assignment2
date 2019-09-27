@@ -1,3 +1,5 @@
 {
-
+    "require-dev": {
+      "php-64bit": "7.3"
+    }
 }
