@@ -1,13 +1,12 @@
+// Updating the price slider.
 const slider = document.getElementById("price");
 const slabel = document.getElementById("slider_label");
-var array = [];
 slabel.innerHTML = slider.value; // Display the default slider value
 slider.oninput = function() { // Update the current slider value (each time you drag the slider handle)
   slabel.innerHTML = this.value;
 }
 
 document.getElementById("filter-search").addEventListener("click", function() {
-
   fetch("/data/treeinfo.json")
     .then(response => response.json())
     .then(data => {
@@ -37,7 +36,7 @@ document.getElementById("filter-search").addEventListener("click", function() {
     
       return matching_list;
     }).then(tree_list => {
-      removeCard();
+      removeCards();
       for (const tree of tree_list) {
         console.log(tree);
         createTreeCard(tree["name"], tree["photo"], tree["price"], tree["description"]);
@@ -47,12 +46,14 @@ document.getElementById("filter-search").addEventListener("click", function() {
 
 //DYNAMIC JS
 
-//createTreeCard();
-
 function createTreeCard(tree_name, tree_image_src, tree_price, tree_description) { // TODO: Add an average rating parameter.
+  const tree_col = document.createElement("div");
+  tree_col.className = "col-lg-4 col-md-6 mb-4";
+  document.getElementById("tree-cards").appendChild(tree_col);
+
   const tree_card = document.createElement("div");
-  tree_card.className = "card h-100"
-  document.getElementById("tree-cards").appendChild(tree_card);
+  tree_card.className = "card h-100";
+  tree_col.appendChild(tree_card);
 
   addTreeImage(tree_card, tree_image_src, tree_name);
   addCardBody(tree_card, tree_name, tree_price, tree_description);
@@ -119,26 +120,11 @@ function calculateStarRating(average_rating) {
   // TODO: Calculate the average rating from the dataset.
 }
 
-function removeCard() {
-//<<<<<<< HEAD
-    // Removes an element from the document
-    var element = document.getElementsByClassName("card h-100");
-    console.log(element);
-//    for(const elem of element){
-//      elem.parentNode.removeChild(elem);
-//    }
-    for (var i = element.length - 1; i >= 0; --i) {
-      element[i].remove();
-    }
-//=======
+function removeCards() {
   // Removes an element from the document
-    const elements = document.getElementsByClassName("card");
-    console.log(elements.length);
-//  while (elements.length > 0) {
-//    elements[0].parentNode.removeChild(elements[0]);
-//  }
-    for (var i = element.length - 1; i >= 0; --i) {
-      element[i].remove();
-    }
-//>>>>>>> origin/filter
+  var elements = document.getElementsByClassName("col-lg-4 col-md-6 mb-4");
+  for (var i = elements.length - 1; i >= 0; --i) {
+    elements[i].remove();
+  }
 }
+
