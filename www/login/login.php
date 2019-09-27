@@ -1,6 +1,6 @@
 <?php
-	require '../data/config.php';
-	session_start();
+  // Placing at the top of the page to suppress any warnings
+  session_start();
 
 	if(isset($_POST['login'])) {
 		$errMsg = '';
@@ -15,33 +15,42 @@
 			$errMsg = 'Enter password';
 
 		if($errMsg == '') {
-			try {
-				$stmt = $connect->prepare('SELECT id, fullname, username, password, secretpin FROM pdo WHERE username = :username');
-				$stmt->execute(array(
-					':username' => $username
-					));
-				$data = $stmt->fetch(PDO::FETCH_ASSOC);
+      // Get all users from the JSON data to search for this user
+      $string = file_get_contents("../data/accounts.json");
+      if ($string == false) {
+        $errMsg = "User $username not found.";
+      }
+      else {
+        $json_array = json_decode($string, true);
+        if ($json_array === null) {
+          $errMsg = "Failed to read data. Please try again.";
+        }
 
-				if($data == false){
-					$errMsg = "User $username not found.";
-				}
-				else {
-					if($password == $data['password']) {
-						$_SESSION['name'] = $data['fullname'];
-						$_SESSION['username'] = $data['username'];
-						$_SESSION['password'] = $data['password'];
-						$_SESSION['secretpin'] = $data['secretpin'];
+        $match = false;
+        foreach ($json_array as $i => $value) {
+          if ($json_array[$i]['username'] == $username) {
+            if ($json_array[$i]['password'] == $password) {
+              $match = true;
+              $_SESSION['username'] = $json_array[$i]['username'];
+              $_SESSION['first-name'] = $json_array[$i]['first-name'];
+              $_SESSION['email'] = $json_array[$i]['email'];
+              $_SESSION['post-address'] = $json_array[$i]['post-address'];
+              $_SESSION['delivery-address'] = $json_array[$i]['delivery-address'];
+              break;
+            }
+            else {
+              $errMsg = 'Password is incorrect';
+            }
+          }
+        }
 
-						header('Location: ../index.php');
-						exit;
-					}
-					else
-						$errMsg = 'Password not match.';
-				}
-			}
-			catch(PDOException $e) {
-				$errMsg = $e->getMessage();
-			}
+        if ($match) {
+          header('Location: ../');
+        }
+        else {
+          $errMsg = "User $username not found.";
+        }
+      }
 		}
 	}
 ?>
@@ -57,36 +66,35 @@
 
   <title>Tree Shop - Login</title>
 
-  <!-- Bootstrap core CSS -->
-  <link href="../../vendor/twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Custom fonts for this template -->
-  <link href="../../vendor/fortawesome/font-awesome/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
-    
-  <link href="css/agency.css" rel="stylesheet">
-
 </head>
     
 <body id="page-top">
-    <div align="center">
-			<?php
-				if(isset($errMsg)){
-					echo '<div style="color:#FF0000;text-align:center;font-size:17px;">'.$errMsg.'</div>';
-				}
-			?>
+  <div align="center">
+    <?php
+      if(isset($errMsg)){
+        echo '<div style="color:#FF0000;text-align:center;font-size:17px;">'.$errMsg.'</div>';
+      }
+    ?>
         
-			<h1><b>Login</b></h1>
-			<div style="margin: 15px">
-				<form action="" method="post">
-					<input type="text" name="username" value="<?php if(isset($_POST['username'])) echo $_POST['username'] ?>" autocomplete="off" class="box"/><br /><br />
-					<input type="password" name="password" value="<?php if(isset($_POST['password'])) echo $_POST['password'] ?>" autocomplete="off" class="box" /><br/><br />
-					<input type="submit" name='login' value="Login" class='submit'/><br />
-				</form>
-		</div>
+    <?php
+      if (isset($_SESSION['username'])) {
+    ?>
+      <a href="logout.php"><h1><b>Logout</b></h1></a>
+    <?php
+      } else {
+    ?>
+      <h1><b>Login</b></h1>
+      <div style="margin: 15px">
+        <form action="" method="post">
+          <input type="text" name="username" value="<?php if(isset($_POST['username'])) echo $_POST['username'] ?>" autocomplete="off" class="box"/><br /><br />
+          <input type="password" name="password" value="<?php if(isset($_POST['password'])) echo $_POST['password'] ?>" autocomplete="off" class="box" /><br/><br />
+          <input type="submit" name='login' value="Login" class='submit'/><br />
+        </form>
+      </div>
+    <?php
+      }
+    ?>
 	</div>
 </body>
+
 </html>
