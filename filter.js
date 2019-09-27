@@ -122,8 +122,10 @@ function removeCard() {
     // Removes an element from the document
     var element = document.getElementsByClassName("card h-100");
     console.log(element);
-    console.log(element.length);
-    for(const elem of element){
-      elem.parentNode.removeChild(elem);
+//    for(const elem of element){
+//      elem.parentNode.removeChild(elem);
+//    }
+    for (var i = element.length - 1; i >= 0; --i) {
+      element[i].remove();
     }
 }
