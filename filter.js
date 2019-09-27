@@ -79,6 +79,7 @@ function addCardBody(tree_card, tree_name, tree_price, tree_description) {
   tree_card.appendChild(body);
 
   const title = document.createElement("h4");
+  title.innerHTML = tree_name;
   title.className = "card-title";
   body.appendChild(title);
 
@@ -90,7 +91,7 @@ function addCardBody(tree_card, tree_name, tree_price, tree_description) {
   // TODO: Modal function here...
 
   const price = document.createElement("h5");
-  price.innerHTML = "$" + tree_price;
+  price.innerHTML = tree_price;
   body.appendChild(price);
 
   const description = document.createElement("p");
