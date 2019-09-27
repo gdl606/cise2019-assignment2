@@ -68,7 +68,7 @@ function addTreeImage(tree_card, image_src, tree_name) {
 
   const image = document.createElement("img");
   image.className = "card-img-top";
-  image.src = "image_src";
+  image.src = image_src;
   image.alt = tree_name;
   anchor.appendChild(image);
 }
