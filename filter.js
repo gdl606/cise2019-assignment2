@@ -119,6 +119,7 @@ function calculateStarRating(average_rating) {
 }
 
 function removeCard() {
+//<<<<<<< HEAD
     // Removes an element from the document
     var element = document.getElementsByClassName("card h-100");
     console.log(element);
@@ -128,4 +129,15 @@ function removeCard() {
     for (var i = element.length - 1; i >= 0; --i) {
       element[i].remove();
     }
+//=======
+  // Removes an element from the document
+    const elements = document.getElementsByClassName("card");
+    console.log(elements.length);
+//  while (elements.length > 0) {
+//    elements[0].parentNode.removeChild(elements[0]);
+//  }
+    for (var i = element.length - 1; i >= 0; --i) {
+      element[i].remove();
+    }
+//>>>>>>> origin/filter
 }
