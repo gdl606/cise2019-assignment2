@@ -6,6 +6,23 @@ slider.oninput = function() { // Update the current slider value (each time you 
   slabel.innerHTML = this.value;
 }
 
+fetch("/data/treeinfo.json")
+    .then(response => response.json())
+    .then(data => {
+  const test_gdgd = [];
+  for (let i=0; i < data.length; i++) {
+        console.log(data[i]);
+        test_gdgd.push(data[i]);
+      }
+  return test_gdgd;
+  }).then(tree_list => {
+      removeCards();
+      for (const tree of tree_list) {
+        console.log(tree);
+        createTreeCard(tree["name"], tree["photo"], tree["price"], tree["description"]);
+      }
+    });
+
 document.getElementById("filter-search").addEventListener("click", function() {
   fetch("/data/treeinfo.json")
     .then(response => response.json())
