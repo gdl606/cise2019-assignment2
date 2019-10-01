@@ -11,14 +11,14 @@ fetch("/data/treeinfo.json")
     .then(data => {
   const test_gdgd = [];
   for (let i=0; i < data.length; i++) {
-        console.log(data[i]);
+        //console.log(data[i]);
         test_gdgd.push(data[i]);
       }
   return test_gdgd;
   }).then(tree_list => {
       removeCards();
       for (const tree of tree_list) {
-        console.log(tree);
+        //console.log(tree);
         createTreeCard(tree["name"], tree["photo"], tree["price"], tree["description"]);
       }
     });
@@ -42,7 +42,10 @@ document.getElementById("filter-search").addEventListener("click", function() {
           }
         }
         
-        if (data[i][slider.id] > slider.value) {
+        console.log(data[i]['price']);
+        console.log(slider.value);
+        console.log("--------------");
+        if (parseFloat(data[i]['price']) > parseFloat(slider.value)) {
           matching = false;
         }
 
@@ -55,7 +58,7 @@ document.getElementById("filter-search").addEventListener("click", function() {
     }).then(tree_list => {
       removeCards();
       for (const tree of tree_list) {
-        console.log(tree);
+        //console.log(tree);
         createTreeCard(tree["name"], tree["photo"], tree["price"], tree["description"]);
       }
     });
@@ -108,7 +111,7 @@ function addCardBody(tree_card, tree_name, tree_price, tree_description) {
   // TODO: Modal function here...
 
   const price = document.createElement("h5");
-  price.innerHTML = tree_price;
+  price.innerHTML = "$" + tree_price;
   body.appendChild(price);
 
   const description = document.createElement("p");
