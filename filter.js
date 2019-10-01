@@ -19,7 +19,7 @@ fetch("/data/treeinfo.json")
       removeCards();
       for (const tree of tree_list) {
         //console.log(tree);
-        createTreeCard(tree["name"], tree["photo"], tree["price"], tree["description"]);
+        createTreeCard(tree["name"], tree["photo"], tree["price"], tree["measurements"], tree["description"]);
       }
     });
 
@@ -59,14 +59,14 @@ document.getElementById("filter-search").addEventListener("click", function() {
       removeCards();
       for (const tree of tree_list) {
         //console.log(tree);
-        createTreeCard(tree["name"], tree["photo"], tree["price"], tree["description"]);
+        createTreeCard(tree["name"], tree["photo"], tree["price"], tree["measurements"], tree["description"]);
       }
     });
 });
 
 //DYNAMIC JS
 
-function createTreeCard(tree_name, tree_image_src, tree_price, tree_description) { // TODO: Add an average rating parameter.
+function createTreeCard(tree_name, tree_image_src, tree_price, tree_measurements, tree_description) { // TODO: Add an average rating parameter.
   const tree_col = document.createElement("div");
   tree_col.className = "col-lg-4 col-md-6 mb-4";
   document.getElementById("tree-cards").appendChild(tree_col);
@@ -76,7 +76,7 @@ function createTreeCard(tree_name, tree_image_src, tree_price, tree_description)
   tree_col.appendChild(tree_card);
 
   addTreeImage(tree_card, tree_image_src, tree_name);
-  addCardBody(tree_card, tree_name, tree_price, tree_description);
+  addCardBody(tree_card, tree_name, tree_price, tree_measurements, tree_description);
   addCardFooter(tree_card);
 }
 
@@ -93,7 +93,7 @@ function addTreeImage(tree_card, image_src, tree_name) {
   anchor.appendChild(image);
 }
 
-function addCardBody(tree_card, tree_name, tree_price, tree_description) {
+function addCardBody(tree_card, tree_name, tree_price, tree_measurements, tree_description) {
   const body = document.createElement("div");
   body.className = "card-body";
   tree_card.appendChild(body);
@@ -113,6 +113,10 @@ function addCardBody(tree_card, tree_name, tree_price, tree_description) {
   const price = document.createElement("h5");
   price.innerHTML = "$" + tree_price;
   body.appendChild(price);
+
+  const measurement = document.createElement("h5");
+  measurement.innerHTML = tree_measurements + "m";
+  body.append(measurement);
 
   const description = document.createElement("p");
   description.className = "card-text";
