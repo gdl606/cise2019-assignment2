@@ -1,1 +1,4 @@
+# Ignore package manager folders.
+node_modules/
 vendor/
+
