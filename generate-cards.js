@@ -15,7 +15,7 @@ function createTreeCard(tree_name, tree_image_src, tree_price, tree_measurements
 // Last two parameters are from JSON.
 function addTreeImage(tree_card, image_src, tree_name) {
   const anchor = document.createElement("a");
-  anchor.href = "image_src";
+  anchor.href = "productdetails.html?name=" + tree_name;
   tree_card.appendChild(anchor);
 
   const image = document.createElement("img");
