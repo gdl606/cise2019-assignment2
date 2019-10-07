@@ -23,13 +23,15 @@ for(var i=0; i<=mydata.length-1; i++)
 }
 
 
-
+var itemname = document.getElementById("product name").innerHTML;
+  var itemprice = document.getElementById("product price").innerHTML;
 
 
 document.getElementById("buy").addEventListener("click", function() {
 
-  var itemname = document.getElementById("product name").innerHTML;
-  var itemprice = document.getElementById("product price").innerHTML;
+  //obj[itemname] = itemprice;
+  sessionStorage.setItem(itemname, itemprice);
+  //console.log(sessionStorage.getItem('items'));
 });
 
 
