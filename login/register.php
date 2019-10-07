@@ -22,7 +22,7 @@
     if($errMsg == '') {
       $string = file_get_contents('../data/accounts.json');
       if ($string == false) {
-        $errMsg = "Hey, you're our first customer!";
+        $errMsg = "Hey, you're our first account!";
       }
 
       $json_array = json_decode($string, true);

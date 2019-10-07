@@ -2,6 +2,17 @@
   // Placing at the top of the page to suppress any warnings
   session_start();
 
+  function locationGiven() {
+    return isset($_GET['location']) && $_GET['location'] != '';
+  }
+
+  function locationValid() {
+    return strpos($_GET['location'], 'http') === false
+      && strpos($_GET['location'], 'www') === false;
+      # For the top level domain.
+      # FIXME && preg_match('\\.\w{,24}/', $_GET['location']) == false;
+  }
+
 	if(isset($_POST['login'])) {
 		$errMsg = '';
 
@@ -9,10 +20,11 @@
 		$username = $_POST['username'];
 		$password = $_POST['password'];
 
-		if($username == '')
+		if($username == '') {
 			$errMsg = 'Enter username';
-		if($password == '')
+    } else if($password == '') {
 			$errMsg = 'Enter password';
+    }
 
 		if($errMsg == '') {
       // Get all users from the JSON data to search for this user
@@ -29,8 +41,8 @@
         $match = false;
         foreach ($json_array as $i => $value) {
           if ($json_array[$i]['username'] == $username) {
+            $match = true;
             if ($json_array[$i]['password'] == $password) {
-              $match = true;
               $_SESSION['username'] = $json_array[$i]['username'];
               $_SESSION['first-name'] = $json_array[$i]['first-name'];
               $_SESSION['email'] = $json_array[$i]['email'];
@@ -39,13 +51,14 @@
               break;
             }
             else {
-              $errMsg = 'Incorrect password. Please try again.';
+              # Error message should be 'Either the username or password is incorrect.' everywhere.
+              $errMsg = "$username, the password you entered is incorrect.";
             }
           }
         }
 
         if ($match) {
-          if (isset($_GET['location'])) {
+          if (locationGiven() && locationValid()) {
             header('Location: ' . $_GET['location']);
           } else {
             header('Location: /');
@@ -60,16 +73,25 @@
 ?>
 
 <html lang="en">
-
 <head>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <title>Login | Plant A Tree</title>
 
-</head>
+  <!-- Bootstrap core CSS -->
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
     
+  <!-- Agency theme core CSS -->
+  <link href="../css/agency.css" rel="stylesheet">
+</head>
 <body id="page-top">
   <div align="center">
     <?php
@@ -81,16 +103,16 @@
     <?php
       if (isset($_SESSION['username'])) {
     ?>
-      <a href="logout.php"><h1><b>Logout</b></h1></a>
+      <a class="btn btn-outline-warning" href=<?php echo "logout.php?location=" . $_GET['location'] ?>><h1><b>Logout</b></h1></a>
     <?php
       } else {
     ?>
       <h1><b>Login</b></h1>
       <div style="margin: 15px">
         <form method="post">
-          <input type="text" name="username" class="box"/><br /><br />
-          <input type="password" name="password" autocomplete="off" class="box" /><br/><br />
-          <input type="submit" name="login" value="Login" class='submit'/><br />
+          <input type="text" class="form-control" name="username" placeholder="Username"/>
+          <input type="password" class="form-control" name="password" placeholder="Password" autocomplete="off"/>
+          <input class="form-control" type="submit" name="login" value="Login" class='submit'/>
         </form>
       </div>
       <p>Not a member? <a href="register.php">Register now!</a></p>
@@ -98,7 +120,18 @@
     <?php
       }
     ?>
-	</div>
-</body>
+  </div>
 
+  <!-- Bootstrap core JavaScript -->
+  <script src="../vendor/jquery/jquery.min.js"></script>
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Plugin JavaScript -->
+  <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+  <!-- Contact form JavaScript -->
+  <script src="../js/jqBootstrapValidation.js"></script>
+  <script src="../js/contact_me.js"></script>
+  <!-- Custom scripts for this template -->
+  <script src="../js/agency.min.js"></script>
+</body>
 </html>
+
