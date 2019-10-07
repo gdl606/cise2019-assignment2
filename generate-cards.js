@@ -31,9 +31,16 @@ function addCardBody(tree_card, tree_name, tree_price, tree_measurements, tree_d
   tree_card.appendChild(body);
 
   const title = document.createElement("h4");
-  title.innerHTML = tree_name;
+  //title.innerHTML = tree_name;
   title.className = "card-title";
   body.appendChild(title);
+
+  var link = document.createElement("a");
+  var ref = document.createAttribute("href");
+  ref.value = "productdetails.html?name=" + tree_name;
+  link.innerHTML = tree_name;
+  link.setAttributeNode(ref);
+  title.appendChild(link);
 
   // TODO: To add a data-toggle attribute, you need to use jQuery or PHP.
   // Preferrably using jQuery.
