@@ -21,12 +21,11 @@ for(let i=0; i<title.length; i++){
 const name = document.createElement("h4");
 name.innerHTML = title[i];
 document.body.appendChild(name);
-for(let j=0; j<prices.length; j++)
-{
+
   const price = document.createElement("h4");
-price.innerHTML = prices[j];
+price.innerHTML = prices[i];
+  console.log(i);
 document.body.appendChild(price);
-  break;
-}
+
 }
 
