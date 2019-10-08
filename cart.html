@@ -116,8 +116,14 @@
     <h1 id="prodname"></h1>
     <h5 id="prodprice"><h5>
 -->
+      <!-- Continue shopping button -->
     <input id="shop" type="button" value="Continue Shopping" onclick="window.location.href = '/shop.html'" />
-    <script src="cartlist.js"></script>
+
+      <!-- Items in the cart -->
+        <div>
+            <script src="cartlist.js"></script>
+            <button id="button" style="align-content: center"> Remove </button>
+        </div>
 
       <footer class="footer">
         <div class="container">
@@ -150,6 +156,7 @@
             </div>
         </div>
     </footer>
+
     <!-- Bootstrap core JavaScript -->
     <script src="gulped_modules/jquery/jquery.min.js"></script>
     <script src="gulped_modules/bootstrap/js/bootstrap.bundle.min.js"></script>
