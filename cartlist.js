@@ -18,11 +18,11 @@ console.log(prices);
 
 
 for(let i=0; i<title.length; i++){
-const name = document.createElement("h4");
+const name = document.createElement("h5");
 name.innerHTML = title[i];
 document.body.appendChild(name);
 
-  const price = document.createElement("h4");
+  const price = document.createElement("h5");
 price.innerHTML = prices[i];
   console.log(i);
 document.body.appendChild(price);
