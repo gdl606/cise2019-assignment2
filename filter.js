@@ -12,7 +12,7 @@ fetch("/data/treeinfo.json")
   .then(response => response.json())
   .then(data => {
     for (let i=0; i < data.length; i++) {
-      createTreeCard(data[i]["name"], data[i]["photo"], data[i]["price"], data[i]["measurements"], data[i]["description"]);
+      createTreeCard(data[i]["name"], data[i]["photo"], data[i]["price"], data[i]["measurements"], data[i]["description"], "tree-cards");
     }
   });
 
@@ -52,7 +52,7 @@ document.getElementById("filter-search").addEventListener("click", function() {
       removeCards();
       for (const tree of tree_list) {
         //console.log(tree);
-        createTreeCard(tree["name"], tree["photo"], tree["price"], tree["measurements"], tree["description"]);
+        createTreeCard(tree["name"], tree["photo"], tree["price"], tree["measurements"], tree["description"], "tree-cards");
       }
     });
 });

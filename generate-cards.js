@@ -1,7 +1,7 @@
-function createTreeCard(tree_name, tree_image_src, tree_price, tree_measurements, tree_description) { // TODO: Add an average rating parameter.
+function createTreeCard(tree_name, tree_image_src, tree_price, tree_measurements, tree_description, parent) { // TODO: Add an average rating parameter.
   const tree_col = document.createElement("div");
   tree_col.className = "col-lg-4 col-md-6 mb-4";
-  document.getElementById("tree-cards").appendChild(tree_col);
+  document.getElementById(parent).appendChild(tree_col);
 
   const tree_card = document.createElement("div");
   tree_card.className = "card h-100";

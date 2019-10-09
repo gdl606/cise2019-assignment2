@@ -96,8 +96,6 @@
 </div>
     
     
-    
-    <!-----------------------------------------------Login Modal-------------------------------------------------------->
 
     <!----------------------------------------------- Hero Header ------------------------------------------------------>
     <header class="masthead">
@@ -121,9 +119,22 @@
                 </div>
                 <div class="col-lg-6 order-lg-1">
                     <div class="p-5">
-                        <h2 class="section-heading text-uppercase">About</h2>
+                        <h2 class="section-heading text-uppercase">New Products</h2>
                         <p>TEXTTEXTTEXTTEXTTEXTTEXT</p>
 
+
+                        <!-------------------------Products for home page------------------------------>
+
+                        <div id = "homeProducts">
+
+                        </div>
+
+
+                        <script type="module" src="homeProd.js"></script>
+
+
+
+                        <!-- ----->
 
                         <a class="btn btn-primary btn-xl text-uppercase" data-toggle="modal" href="#myModal">Read More</a>
 
@@ -198,316 +209,7 @@
         </div>
     </section>
 
-<!------------------------------------------------------------------>
-<div class="header">
-  	<h2>Register</h2>
-  </div>
-	
-  <form method="post" action="register.php">
-  	<?php include('errors.php'); ?>
-  	<div class="input-group">
-  	  <label>Username</label>
-  	  <input type="text" name="username" value="<?php echo $username; ?>">
-  	</div>
-  	<div class="input-group">
-  	  <label>Email</label>
-  	  <input type="email" name="email" value="<?php echo $email; ?>">
-  	</div>
-  	<div class="input-group">
-  	  <label>Password</label>
-  	  <input type="password" name="password_1">
-  	</div>
-  	<div class="input-group">
-  	  <label>Confirm password</label>
-  	  <input type="password" name="password_2">
-  	</div>
-  	<div class="input-group">
-  	  <button type="submit" class="btn" name="reg_user">Register</button>
-  	</div>
-  	<p>
-  		Already a member? <a href="login.php">Sign in</a>
-  	</p>
-  </form>
 
-    <!-----------------------------FAQ's------------------------------>
-    <section class="page-section" id="FAQS">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading text-uppercase">Frequently Asked Questions</h2>
-                </div>
-            </div>
-
-            <div id="accordion">
-                <div class="card">
-                    <div class="card-header" id="headingFAQs">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFAQs" aria-expanded="false" aria-controls="collapseOne">
-                                Services and Charges
-                            </button>
-                        </h5>
-                    </div>
-                    <div id="collapseFAQs" class="collapse" aria-labelledby="headingExtras" data-parent="#accordion">
-                        <div class="card-body">
-                            <ul>
-                                <li>ACC Acupuncture/Tuina/Cupping/Moxa $50 surplus per hour</li>
-                                <br>
-
-                                <li>Acupuncture and Manual Therapy $100 per hour</li>
-                                <br>
-
-                                <li>Multi Clinic Wednesday 4.30-6pm. This is a clinic shared with 3-4 other people. $30. Only available once treatment has been assessed. Booking required</li>
-                                <br>
-
-                                <li>Chi-gung $50 per hour</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="card">
-                <div class="card-header" id="headingOne">
-                    <h5 class="mb-0">
-                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseExtras" aria-expanded="false" aria-controls="collapseExtras">
-                            Special Treatment Conditions
-                        </button>
-                    </h5>
-                </div>
-                <div id="collapseExtras" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                    <div class="card-body">
-                        <ul>
-                            <li><b>Concessions:</b> concession prices available to Seniors, valid community card holders, students and children.</li>
-                            <br>
-
-                            <li>
-                                <b>ACC:</b>If you an ACC injury related claim you are entitled for Acupuncture therapy under ACC. Please, remember to provide us with the claim number, date of the injury and if possible, the diagnostic code. Injury has to be within the last year. For more information please click on the link below:
-                                <br><br>
-                                <a class="btn btn-primary btn-m text-uppercase js-scroll-trigger" href="https://www.acc.co.nz/im-injured/injuries-we-cover/treatment-we-pay-for/">
-                                    Click Here to Learn More
-                                </a>
-
-                            </li>
-                            <br>
-                            <li>
-                                <b>Southern Cross insurance:</b>
-                                The Wellbeing Two Policy with the Body Care Module may cover your cost for Acupuncture. You would be required to claim your treatment fees back from Southern Cross.
-                                <br><br>
-                                <a class="btn btn-primary btn-m text-uppercase js-scroll-trigger" href="http://www.southerncross.co.nz/society/buying-health-insurance/our-plans/wellbeing.aspx">
-                                    Click Here to Learn More
-                                </a>
-                            </li>
-                            <br>
-                            <li>
-                                <b>Education Benevolent Society (EBS) Members:</b>
-                                EBS is a not for profit organisation dedicated to employees in the New Zealand Education Sector.EBS is 100% owned by these Education Unions and only members of, or people employed by these organisations can access EBS benefits. 50% of the net cost of specified expenses for Acupuncture will be covered.
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header" id="headingOne">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseUnions" aria-expanded="false" aria-controls="collapseUnions">
-                                Education Unions
-                            </button>
-                        </h5>
-                    </div>
-                    <div id="collapseUnions" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                        <div class="card-body">
-                            <ul>
-                                <li><b>NZEI: </b>NZ Educational Institute</li>
-
-                                <li><b>PPTA: </b>Post Primary Teachers Association</li>
-
-                                <li><b>TEU: </b>The Tertiary Education Union (was ASTE & AUS)</li>
-
-                                <li><b>TIASA: </b>Tertiary Institutes Allied Staff Association</li>
-
-                                <li><b>ISEA : </b>The Independent Schools Education Association Inc (formerly ISTANZ)</li>
-
-                                <li><b>PSA : </b>NZ Public Service Association University and Education Services Groups.</li>
-                                <br>
-                                <a class="btn btn-primary btn-m text-uppercase js-scroll-trigger" href="http://www.ebs.org.nz/TermsStd.html">
-                                    Click Here to Learn More
-                                </a>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header" id="headingOne">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOrganizations" aria-expanded="false" aria-controls="collapseOrganizations">
-                                Other Cost Covering Organisations
-                            </button>
-                        </h5>
-                    </div>
-                    <div id="collapseOrganizations" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                        <div class="card-body">
-                            <ul>
-                                <li>The following organisations also cover all or some of the cost of Acupuncture treatment for their employees:<br> NZ Police, NZ Post, Air New Zealand, Kiwi Rail, and Veteran’s Affairs.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="card">
-                    <div class="card-header" id="headingOne">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseGungChi" aria-expanded="false" aria-controls="collapseGungChi">
-                                What is Chi Gung?
-                            </button>
-                        </h5>
-                    </div>
-                    <div id="collapseGungChi" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                        <div class="card-body">
-                            <ul>
-                                <li>
-                                    The best description I have ever heard used to describe Chi-gung is by Daniel Reid’s book title, Chi Gung, Harnessing The Power of the Universe. Another Tai Chi studio in London I practiced in described the Chinese practices as ‘intelligent exercise’. My teacher in London used to describe the practices as ‘bomb proof’. All apt descriptions attempting to illustrate a subtle form of physical exercise which benefits human health on so many different levels. Chi-gung works on opening up the channels or meridians related to different organs. It encourages correct alignment to the skies above and the earth below. So the practice relates to the environment. This allows energy to flow freely and well through the body to relieve from dis-ease.
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header" id="headingOne">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFertility" aria-expanded="false" aria-controls="collapseFertility">
-                                Fertility
-                            </button>
-                        </h5>
-                    </div>
-                    <div id="collapseFertility" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                        <div class="card-body">
-                            <ul>
-                                <p>
-                                    Acupuncture and Chinese Herbal Medicine are used extensively in the treatment of infertility, both to promote a natural pregnancy and also well known and used in conjunction with IVF treatments and other drug therapies in assisted conception.
-                                    <br><br>
-
-                                    There have been two major researches on the effect of acupuncture and Chinese Herbal Medicine in relation to IVF treatments, a German Research on Acupuncture and ART and the research into Chinese Herbal Medicine by The University of Adelaide into the effects of CHM on pregnancy rates compared with Western Medical Drug Therapy.
-                                </p>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div>
-            </div>
-        </div>
-    </section>
-    <!------------------------------------------- Title -------------------------------------->
-    <section class="page-section" id="services" style="padding-top: 0px">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading text-uppercase">Treated Conditions</h2>
-                    <h3 class="section-subheading text-muted">What acupuncture can help with</h3>
-                </div>
-            </div>
-
-            <!------------------------------------------------Scroll Boxes --------------------------------------------->
-
-            <div id="accordion">
-                <div class="card">
-                    <div class="card-header" id="headingOne">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                Addictions
-                            </button>
-                        </h5>
-                    </div>
-                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                        <div class="card-body">
-                            <ul>
-                                <li>Alcohol</li>
-
-                                <li>Smoking</li>
-
-                                <li>Food</li>
-
-                                <li>Prescribed and Recreational Drugs</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="card">
-                    <div class="card-header" id="headingTwo">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                Childrens Complaints
-                            </button>
-                        </h5>
-                    </div>
-                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                        <div class="card-body">
-                            <ul>
-                                <li>Bed wetting</li>
-
-                                <li>Indigegstion</li>
-
-                                <li>Sleeping Issues</li>
-
-                                <li>Skin Rash</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header" id="headingThree">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                Dermatology
-                            </button>
-                        </h5>
-                    </div>
-                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                        <div class="card-body">
-                            <ul>
-                                <li>Eczema</li>
-
-                                <li>Acne</li>
-
-                                <li>Herpes</li>
-
-                                <li>Psorialis</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header" id="headingFour">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                Eyes, Ears, Nose & Throat
-                            </button>
-                        </h5>
-                    </div>
-                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
-                        <div class="card-body">
-                            <ul>
-                                <li>Dizziness</li>
-
-                                <li>Hay Fever</li>
-
-                                <li>Sore Throat</li>
-
-                                <li>Poor Eyesight</li>
-
-                                <li>Ringing in the ears</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <br><br><br><br>
 
 
 
