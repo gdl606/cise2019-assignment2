@@ -6,6 +6,7 @@
 
 var title = [];
 var prices = [];
+var quantities = [];
 var floatPrices = [];
 var totalPrice;
 
@@ -14,7 +15,10 @@ for(let i=0 ; i<sessionStorage.length; i++)// session storage temporary storage 
 
     var key = sessionStorage.key(i);
     title[i] = key;
-    prices[i] = sessionStorage.getItem(key);
+
+    let attributes = JSON.parse(sessionStorage.getItem(key));
+    prices[i] = attributes["price"];
+    quantities[i] = attributes["quantity"];
 
     var oneString = prices[i];
     var smalString = oneString.slice(1, 7);
@@ -25,6 +29,7 @@ for(let i=0 ; i<sessionStorage.length; i++)// session storage temporary storage 
 
 console.log(title);
 console.log(prices);
+console.log(quantities);
 
 // adds the title and price to the html file
 for(let i=0; i<title.length; i++)

@@ -25,12 +25,13 @@ for(var i=0; i<=mydata.length-1; i++)
 
 var itemname = document.getElementById("product-name").innerHTML;
   var itemprice = document.getElementById("product-price").innerHTML;
-
+let itemquantity = mydata[0]["quantity"];
 
 document.getElementById("buy").addEventListener("click", function() {
 
   //obj[itemname] = itemprice;
-  sessionStorage.setItem(itemname, itemprice);
+    let attributes = {price: itemprice, quantity: itemquantity}
+  sessionStorage.setItem(itemname, JSON.stringify(attributes));
   //console.log(sessionStorage.getItem('items'));
 });
 
