@@ -11,17 +11,16 @@
   <title>Tree Shop</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="gulped_modules/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom fonts for this template -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="gulped_modules/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
   <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
     
     <link href="css/agency.css" rel="stylesheet">
-
 </head>
 <body id="page-top">
     <!------------------------------------- Navigation Bar --------------------------------------------------------------->
@@ -44,7 +43,7 @@
                         <a class="nav-link js-scroll-trigger" href="#about">Accessories</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#contact">FAQ's</a>
+                        <a class="nav-link js-scroll-trigger" href="cart.html">Cart</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="#FAQS">Login</a>
@@ -75,6 +74,125 @@
                     <a href="#" class="list-group-item">Shrubs</a>
                     <a href="#" class="list-group-item">Potting Mix</a>
                 </div>
+                
+              
+              
+              
+              
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+               
+                <!-- filtering search menu-->
+                <br>
+                <h6>Filter<h6>
+                <h6>Name<h6>
+                <div>
+                    <select id="name">
+                      <option value="">Choose a name...</option>
+                      <option value="Peach Tree">Peach Tree</option>
+                      <option value="Portugal Laurel">Portugal Laurel</option>
+                      <option value="Leyland Cypress">Leyland Cypress</option>
+                      <option value="Manuka">Manuka</option>
+                      <option value="Eucalyptus">Eucalyptus</option>
+                      <option value="Nikau">Nikau</option>
+                      <option value="English Oak">English Oak</option>
+                      <option value="Japanese Maple">Japanese Maple</option>
+                      <option value="Dwarf Apple">Dwarf Apple</option>
+                      <option value="Kauri">Kauri</option>
+
+                    </select>
+                </div> 
+                <h6>Category<h6>
+                <div>
+                    <select id="category">
+                      <option value="">Choose a category...</option>
+                      <option value="Fruit">Fruit</option>
+                      <option value="Hedge">Hedge</option>
+                      <option value="Evergreen">Evergreen</option>
+                      <option value="NZ Native">NZ Native</option>
+                      <option value="Gum">Gum</option>
+                      <option value="Palm">Palm</option>
+                      <option value="Hardwood">Hardwood</option>
+                    </select>
+                </div>
+                <h6>Conditions<h6>
+                <div>
+                    <select id="conditions">
+                      <option value="">Choose a condition...</option>
+                      <option value="Fast/Sunny">Fast/Sunny</option>
+                      <option value="Fast/Medium">Fast/Medium</option>
+                      <option value="Slow/Sunny">Slow/Sunny</option>
+                      <option value="Slow/Anything">Slow/Anything</option>
+                      <option value="Medium/Shade">Medium/Shade</option>
+                      <option value="Medium/Medium">Medium/Medium</option>
+                      <option value="Anything/Sunny">Anything/Sunny</option>
+                      <option value="Medium/Sunny">Medium/Sunny</option>
+                      <option value="Fast/Sunny">Fast/Sunny</option>
+                      <option value="Medium/Sunny">Medium/Sunny</option>
+                    </select>
+                </div>
+                <h6>Maintainence<h6>
+                <div>
+                    <select id="maintenance">
+                      <option value="">Choose a maintainence level...</option>
+                      <option value="Low">Low</option>
+                      <option value="High">High</option>
+                    </select>
+                </div>
+                 <h6>Max height<h6>
+                <div>
+                    <select id="max_height">
+                      <option value="">Choose a Max Height (meters)...</option>
+                      <option value="<1m">&lt;1</option>
+                      <option value="1-2">1-2</option>
+                      <option value="2-3m">2-3</option>
+                      <option value=">3m">&gt;3</option>
+                    </select>
+                </div>
+                 <h6>Growth Rate<h6>
+                <div>
+                    <select id="growth_rate">
+                      <option value="">Choose a Growth Rate (meters)...</option>
+                      <option value="Slow">Slow</option>
+                      <option value="Medium">Medium</option>
+                      <option value="Fast">Fast</option>
+                    </select>
+                </div>
+                 <h6>Price<h6>
+                <div>
+                      <input type="range" min="1" max="100" value="50" class="slider" id="price">
+                      <p>Less than: $<span id="slider_label"></span></p>
+                </div>
+                <br>
+                <button id="filter-search">Search</button>
+                <script type="module" src="filter.js"></script>
+                
+            
+                <!-- filtering search menu-->
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
             </div>
             <!-- /.col-lg-3 -->
             <div class="col-lg-9">
@@ -104,120 +222,8 @@
                         <span class="sr-only">Next</span>
                     </a>
                 </div>
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                            <div class="card-body">
-                                <h4 class="card-title">
-                                    <a  data-toggle="modal" href="#myModal">Item One</a>
+                <div class="row" id="tree-cards">
 
-                                    <!--MODAL TEST1-->
-
-                                    <div class="modal fade" id="myModal">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <!-- Modal Header -->
-                                                <div class="modal-header">
-                                                    <h4 class="modal-title">Details</h4>
-                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                </div>
-                                                <!-- Modal body -->
-                                                <div class="modal-body">
-                                                    Tree Info
-                                                </div>
-                                                <!-- Modal footer -->
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--------------->
-                                </h4>
-                                <h5>$24.99</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                            <div class="card-body">
-                                <h4 class="card-title">
-                                    <a href="#">Item Two</a>
-                                </h4>
-                                <h5>$24.99</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                            <div class="card-body">
-                                <h4 class="card-title">
-                                    <a href="#">Item Three</a>
-                                </h4>
-                                <h5>$24.99</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                            <div class="card-body">
-                                <h4 class="card-title">
-                                    <a href="#">Item Four</a>
-                                </h4>
-                                <h5>$24.99</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                            <div class="card-body">
-                                <h4 class="card-title">
-                                    <a href="#">Item Five</a>
-                                </h4>
-                                <h5>$24.99</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                            <div class="card-body">
-                                <h4 class="card-title">
-                                    <a href="#">Item Six</a>
-                                </h4>
-                                <h5>$24.99</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <!-- /.row -->
             </div>
@@ -252,17 +258,17 @@
                         </li>
                     </ul>
                 </div><br>
-                <div class="col-md-4">
-                    <br><a class="btn btn-primary btn-m text-uppercase" url="www.nzasa.org">NZASA</a>
+                 <div class="col-md-4">
+                    <br><a class="btn btn-primary btn-m text-uppercase" href="storelocations.html">Store Locations</a>
                 </div>
             </div>
         </div>
     </footer>
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="gulped_modules/jquery/jquery.min.js"></script>
+    <script src="gulped_modules/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="gulped_modules/jquery-easing/jquery.easing.min.js"></script>
     <!-- Contact form JavaScript -->
     <script src="js/jqBootstrapValidation.js"></script>
     <script src="js/contact_me.js"></script>
