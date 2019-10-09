@@ -33,7 +33,7 @@
       $found = false;
       foreach ($json_array as $i => $value) {
         if ($username == $value['username']) {
-          $errMsg = 'Username already taken. Did you want to <a href="login.php">login</a>?';
+          $errMsg = 'Username already taken. Did you want to <a href="/login/">login</a>?';
           $found = true;
           break;
         }
@@ -66,7 +66,7 @@
   }
 
 	if (isset($_GET['action']) && $_GET['action'] == 'joined') {
-		$errMsg = 'Registration successfull. Now you can <a href="login.php">login</a>';
+		$errMsg = 'Registration successfull. Now you can <a href="/login/">login</a>';
 	}
 ?>
 
