@@ -112,6 +112,9 @@
                   <li class="nav-item">
                       <a class="nav-link js-scroll-trigger" href="/login/?location=/index.html">Login</a>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="storelocations.html">Store Locations</a>
+                  </li>
               </ul>
           </div>
       </div>

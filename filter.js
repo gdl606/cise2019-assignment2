@@ -23,17 +23,17 @@ slider.oninput = function() {
 
 const condition_filters = document.getElementsByTagName("select");
 for (const dropdown of condition_filters) {
-  dropdown.addEventListener("change", filter())
+  dropdown.addEventListener("change", filter)
 }
 
 // Add the event listener when the slider value is changed.
-slider.addEventListener("change", filter());
+slider.addEventListener("change", filter);
 
 function filter() {
   fetch("/data/treeinfo.json")
     .then(response => response.json())
-    .then(selectData(data))
-    .then(displayFilteredProducts(list));
+    .then(data => selectData(data))
+    .then(list => displayFilteredProducts(list));
 }
 
 function selectData(data) {
