@@ -18,7 +18,7 @@
       $errMsg = 'Enter username';
     if($password == '')
       $errMsg = 'Enter password';
-    
+
     if($errMsg == '') {
       $string = file_get_contents('../data/accounts.json');
       if ($string == false) {
@@ -86,7 +86,7 @@
   <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
-    
+
   <!-- Agency theme core CSS -->
   <link href="/css/agency.css" rel="stylesheet">
 </head>
@@ -144,7 +144,7 @@
 			</div>
     </div>
   </div>
-  
+
   <script src="../gulped_modules/jquery/jquery.min.js"></script>
   <script src="../gulped_modules/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- Plugin JavaScript -->

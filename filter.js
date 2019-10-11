@@ -40,7 +40,7 @@ function selectData(data) {
   const matching_list = [];
   for (let i=0; i < data.length; i++) {
     let matching = true;
-        
+
     // Go through all the dropdown menus and compare their values against the JSON data.
     for (const dropdown of condition_filters) {
       if (dropdown.value != "" && data[i][dropdown.id] != dropdown.value) {
