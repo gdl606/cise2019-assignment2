@@ -131,6 +131,7 @@
     ?>
       <h1><b>Logout</b></h1>
       <div class="container" style="margin: 15px">
+        <h3>Hello, <?php echo $_SESSION['username']; ?></h3>
         <button class="btn btn-outline-warning" onclick="window.location = '<?php echo "logout.php?location=" . $_GET['location'] ?>';"><h1><b>Logout</b></h1></a>
       </div>
     <?php
