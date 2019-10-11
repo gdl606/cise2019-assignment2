@@ -1,24 +1,29 @@
 import { createTreeCard, removeCards } from "./generate-cards.js";
 
-// Updating the price slider.
-const slider = document.getElementById("price");
-const slabel = document.getElementById("slider_label");
-slabel.innerHTML = slider.value; // Display the default slider value
-slider.oninput = function() { // Update the current slider value (each time you drag the slider handle)
-  slabel.innerHTML = this.value;
-}
-
-// Generate all the cards when the shop has loaded.
+// Generate all the cards when the shop has loaded. TODO Should be in a separate script.
 fetch("/data/treeinfo.json")
   .then(response => response.json())
   .then(data => {
     for (let i=0; i < data.length; i++) {
       createTreeCard(data[i]["name"], data[i]["photo"], data[i]["price"], data[i]["measurements"], data[i]["description"], "tree-cards");
     }
-  });
+});
+
+// Updating the price slider.
+const slider = document.getElementById("price");
+const slabel = document.getElementById("slider_label");
+
+// Display the default slider value.
+slabel.innerHTML = slider.value;
+
+// Update the current slider value (each time you drag the slider handle).
+slider.oninput = function() {
+  slabel.innerHTML = this.value;
+}
 
 const condition_filters = document.getElementsByTagName("select");
 for (const dropdown of condition_filters) {
+<<<<<<< HEAD
   console.log(dropdown);
   dropdown.addEventListener("change", function() {
     fetch("/data/treeinfo.json")
@@ -46,20 +51,49 @@ for (const dropdown of condition_filters) {
           if (parseFloat(data[i]['price']) > parseFloat(slider.value)) {
             matching = false;
           }
+=======
+  dropdown.addEventListener("change", filter())
+}
 
-          if (matching) {
-            matching_list.push(data[i]);
-          }
-        }
+// Add the event listener when the slider value is changed.
+slider.addEventListener("change", filter());
+
+function filter() {
+  fetch("/data/treeinfo.json")
+    .then(response => response.json())
+    .then(selectData(data))
+    .then(displayFilteredProducts(list));
+}
+>>>>>>> origin/master
+
+function selectData(data) {
+  const matching_list = [];
+  for (let i=0; i < data.length; i++) {
+    let matching = true;
+
+    // Go through all the dropdown menus and compare their values against the JSON data.
+    for (const dropdown of condition_filters) {
+      if (dropdown.value != "" && data[i][dropdown.id] != dropdown.value) {
+        matching = false;
+        break;
+      }
+    }
       
-        return matching_list;
-      }).then(tree_list => {
-        removeCards();
-        for (const tree of tree_list) {
-          //console.log(tree);
-          createTreeCard(tree["name"], tree["photo"], tree["price"], tree["measurements"], tree["description"], "tree-cards");
-        }
-      });
-  });
+    if (parseFloat(data[i]['price']) > parseFloat(slider.value)) {
+      matching = false;
+    }
+
+    if (matching) {
+      matching_list.push(data[i]);
+    }
+  }
+  return matching_list;
+}
+
+function displayFilteredProducts(list) {
+  removeCards();
+  for (const tree of list) {
+    createTreeCard(tree["name"], tree["photo"], tree["price"], tree["measurements"], tree["description"], "tree-cards");
+  }
 }
 

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<DOCTYPE html>
 <html lang="en">
 <!--Test-->
 <head>
@@ -20,7 +20,7 @@
   <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
     
-    <link href="css/agency.css" rel="stylesheet">
+  <link href="css/agency.css" rel="stylesheet">
 
 </head>
 <body id="page-top">
@@ -38,18 +38,10 @@
                         <a class="nav-link js-scroll-trigger" href="shop.html">Trees</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="accessories.html">Accessories</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="faq.html">FAQ's</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="cart.html">Cart</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" data-toggle = "modal" data-target="#exampleModal">Account</a>
-                    </li>
-                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="login?location=/index.html">Login</a>
                     </li>
                 </ul>
             </div>
@@ -94,8 +86,6 @@
     </div>
   </div>
 </div>
-    
-    
 
     <!----------------------------------------------- Hero Header ------------------------------------------------------>
     <header class="masthead">
@@ -114,7 +104,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 order-lg-2">
                     <div class="p-5">
-                        <img class="img-fluid rounded" src="../img/sliderPhoto/2.jpg" alt="" style=" max-width: 300px;">
+                        <img class="img-fluid rounded" src="img/sliderPhoto/2.jpg" alt="" style=" max-width: 300px;">
                     </div>
                 </div>
                 <div class="col-lg-6 order-lg-1">
@@ -159,7 +149,7 @@
                         <div class = "container">
                         <div id = "homeProducts" class="row align-items-left" >
 
-                        <script type="module" src="homeProd.js"></script>
+                        <script type="module" src="home-products.js"></script>
                         </div>
                         </div>
                             <center><a class="btn btn-primary btn-xl text-uppercase" href="shop.html">See More!</a></center><br>
@@ -209,41 +199,31 @@
         </div>
     </section>
     <div id = "homeProducts" class = "row">
-        <script type="module" src="homeProd.js"></script>
+        <script type="module" src="home-products.js"></script>
     </div>
 
             <!---------------------------- Footer ---------------------------->
-            <footer class="footer">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <span class="copyright"></span>
-                        </div>
-                        <div class="col-md-4">
-                            <ul class="list-inline social-buttons">
-                                <li class="list-inline-item">
-                                    <a href="#">
-                                        <i class="fab fa-twitter"></i>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#">
-                                        <i class="fab fa-linkedin-in"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div><br>
-                        <div class="col-md-4">
-                            <br><a class="btn btn-primary btn-m text-uppercase" href="storelocations.html">Store Locations</a>
-                        </div>
-                    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright"></span>
+
+                    <a class="btn btn-primary btn-m text-uppercase" href="storelocations.html">Shop Trees</a><br>
+                        <a class="btn btn-primary btn-m text-uppercase" href="#">Accessories</a><br>
+                        <a class="btn btn-primary btn-m text-uppercase" href="cart.html">Cart</a><br>
+                        <a class="btn btn-primary btn-m text-uppercase" data-toggle="modal" data-target = "#exampleModal">Account</a><br>
                 </div>
-            </footer>
+
+                <div class="col-md-4">
+                <img src="https://comps.canstockphoto.com/tree-silhouette-illustration_csp40988129.jpg" style="max-height: 200px">
+                </div><br>
+                <div class="col-md-4">
+                    <br><a class="btn btn-primary btn-m text-uppercase" href="storelocations.html">Store Locations</a>
+                </div>
+            </div>
+        </div>
+    </footer>
             <!-- Bootstrap core JavaScript -->
             <script src="gulped_modules/jquery/jquery.min.js"></script>
             <script src="gulped_modules/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -254,6 +234,5 @@
             <script src="js/contact_me.js"></script>
             <!-- Custom scripts for this template -->
             <script src="js/agency.min.js"></script>
-</body>
-    
+  </body>
 </html>
