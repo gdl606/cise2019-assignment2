@@ -33,6 +33,7 @@ for (const dropdown of condition_filters) {
           
           // Go through all the dropdown menus and compare their values against the JSON data.
           for (const dropdown of dropdown_list) {
+            console.log(dropdown.value);
             if (dropdown.value != "" && data[i][dropdown.id] != dropdown.value) {
               matching = false;
               break;
