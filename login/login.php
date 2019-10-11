@@ -39,10 +39,12 @@
         }
 
         $match = false;
+        $valid = false;
         foreach ($json_array as $i => $value) {
           if ($json_array[$i]['username'] == $username) {
             $match = true;
             if ($json_array[$i]['password'] == $password) {
+              $valid = true;
               $_SESSION['username'] = $json_array[$i]['username'];
               $_SESSION['first-name'] = $json_array[$i]['first-name'];
               $_SESSION['email'] = $json_array[$i]['email'];
@@ -50,19 +52,19 @@
               $_SESSION['delivery-address'] = $json_array[$i]['delivery-address'];
               break;
             }
-            else {
-              # Error message should be 'Either the username or password is incorrect.' everywhere.
-              $errMsg = "$username, the password you entered is incorrect.";
-            }
           }
         }
 
-        if ($match) {
+        if ($match && $valid) {
           if (locationGiven() && locationValid()) {
             header('Location: ' . $_GET['location']);
           } else {
             header('Location: /');
           }
+        }
+        elseif ($match && !$valid) {
+              # Error message should be 'Either the username or password is incorrect.' everywhere.
+              $errMsg = "$username, the password you entered is incorrect.";
         }
         else {
           $errMsg = "User $username not found. Would you like to <a href=\"register.php\">register</a>?";
@@ -120,11 +122,7 @@
   </nav>
 
   <div align="center">
-    <?php
-      if(isset($errMsg)){
-        echo '<div style="color:#FF0000;text-align:center;font-size:17px;">'.$errMsg.'</div>';
-      }
-    ?>
+    
 
     <?php
       if (isset($_SESSION['username'])) {
@@ -145,6 +143,11 @@
           <input class="form-control" type="submit" name="login" value="Login" class='submit'/>
         </form>
       </div>
+      <?php
+        if(isset($errMsg)){
+          echo '<div style="color:#FF0000;text-align:center;font-size:17px;">'.$errMsg.'</div>';
+        }
+      ?>
       <p>Not a member? <a href="register.php">Register now!</a></p>
     <?php
       }
