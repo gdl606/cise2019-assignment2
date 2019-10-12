@@ -26,22 +26,45 @@ for(let i=0 ; i<sessionStorage.length; i++)// session storage temporary storage 
 console.log(title);
 console.log(prices);
 
+var id=0;
 // adds the title and price to the html file
 for(let i=0; i<title.length; i++)
 {
-    const name = document.createElement("h5"); // create element will create something in the document (html file)
-    name.innerHTML = title[i];
-    document.body.appendChild(name);
+    id+=1;
+    var itemtitle = document.createElement("h5"); // create element will create an h5 element in the document (html file)
+    itemtitle.setAttribute("id", id)
+  //    name.setAttribute("id", "item"+itemnum);
+//    ;
+    itemtitle.setAttribute("innnerHTML", title[i]);
+    document.body.appendChild(itemtitle);
 
     const price = document.createElement("h6");
     price.innerHTML = prices[i];
-        price.compareDocumentPosition(name);
+    price.compareDocumentPosition(itemtitle);
     console.log(i);
-    document.body.appendChild(price);
+    itemtitle.appendChild(price);
 
     var button = document.createElement("BUTTON");
+    button.setAttribute("id", id)
     button.innerHTML = "Remove";
-    document.body.appendChild(button);
+    itemtitle.appendChild(button);
+    button.addEventListener("click", itemtitle => removeItem(itemtitle))
+}
+
+function removeItem(){
+  //console.log(this)
+  var buttonid = button.getAttribute("id")
+  console.log(button)
+
+  //button.parentElement.parentElement.removeChild(document.getElementById(buttonid));
+  console.log(title[0])
+
+  console.log(itemtitle.innerHTML)
+  sessionStorage.removeItem(title[0])
+  var t = button.parentElement;
+  //console.log("sdfd");
+  button.parentElement.parentElement.removeChild(t);
+  //console.log(sessionStorage.key(0));
 }
 
 var sum = 0.0;
