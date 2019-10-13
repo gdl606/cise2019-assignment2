@@ -1,7 +1,4 @@
 vendor/
 node_modules/
 gulped_modules/
-css/agency*
-js/agency*
-js/locations*
 
