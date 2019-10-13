@@ -33,7 +33,7 @@
       $found = false;
       foreach ($json_array as $i => $value) {
         if ($username == $value['username']) {
-          $errMsg = 'Username already taken. Did you want to <a href="/login/">login</a>?';
+          $errMsg = 'Username already taken. Did you want to <a href="/login/login.php">login</a>?';
           $found = true;
           break;
         }
@@ -66,7 +66,7 @@
   }
 
 	if (isset($_GET['action']) && $_GET['action'] == 'joined') {
-		$errMsg = 'Registration successfull. Now you can <a href="/login/">login</a>';
+		$errMsg = 'Registration successfull. Now you can <a href="/login/login.php">login</a>';
 	}
 ?>
 
@@ -110,7 +110,7 @@
                       <a class="nav-link js-scroll-trigger" href="/cart.html">Cart</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link js-scroll-trigger" href="/login/login.php?location=/index.html">Login</a>
+                      <a class="nav-link js-scroll-trigger" href="/login/login.php">Login</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="/storelocations.html">Store Locations</a>
@@ -145,15 +145,15 @@
     </div>
   </div>
 
-  <script src="../gulped_modules/jquery/jquery.min.js"></script>
-  <script src="../gulped_modules/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/gulped_modules/jquery/jquery.min.js"></script>
+  <script src="/gulped_modules/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- Plugin JavaScript -->
-  <script src="../gulped_modules/jquery-easing/jquery.easing.min.js"></script>
+  <script src="/gulped_modules/jquery-easing/jquery.easing.min.js"></script>
   <!-- Contact form JavaScript -->
-  <script src="../js/jqBootstrapValidation.js"></script>
-  <script src="../js/contact_me.js"></script>
+  <script src="/js/jqBootstrapValidation.js"></script>
+  <script src="/js/contact_me.js"></script>
   <!-- Custom scripts for this template -->
-  <script src="../js/agency.min.js"></script>
+  <script src="/js/agency.min.js"></script>
 </body>
 </html>
 

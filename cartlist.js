@@ -89,7 +89,7 @@ function removeItem(item) {
   itemID = parseInt(item.id);
   item.parentElement.removeChild(item);
   
-  let title = titles[itemID-1];
+  const title = titles[itemID-1];
   sum -= parseFloat(prices[itemID-1].substr(1));
   gstSum = sum * 0.15;
   sum = sum.toFixed(2);

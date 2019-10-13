@@ -32,67 +32,24 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="shop.html">Trees</a>
+                        <a class="nav-link js-scroll-trigger" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="accessories.html">Accessories</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="faq.html">FAQ's</a>
+                        <a class="nav-link js-scroll-trigger" href="shop.html">Products</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="cart.html">Cart</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" data-toggle = "modal" data-target="#exampleModal">Account</a>
+                        <a class="nav-link js-scroll-trigger" href="login/login.php">Login</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="storelocations.html">Store Locations</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-
-    <!------------------------------------------------Modal Login------------------------------------------------------->
-
-    <!-- Button trigger modal -->
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Login to Trees</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <section id = "contact" class = "page-section" style="padding: 20px;">
-        <div>
-	<div align="center">
-		<div style="padding: 0px;" align="left">
-
-			</div>
-
-				<h1 style="color: white">Welcome To Trees!</h1>
-				<br>
-				<a href="PHPFILES/login.php" class = "btn btn-primary" style = "padding: 5px; color: black">Login</a> <br><br>
-				<a href="PHPFILES/register.php" class = "btn btn-primary" style="color: black" >Register</a> <br><br>
-				<a href="PHPFILES/forgot.php" class = "btn btn-primary" style = "color: black">Forgot Password</a>
-			</div>
-		</div>
-        </section>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Login</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
 
     <!----------------------------------------------- Hero Header ------------------------------------------------------>
     <header class="masthead">
@@ -111,11 +68,7 @@
     <h5 id="product-measurement"></h5>
     <p id="product-description"></p>
 
-    <button id="buy"></button>
-<!--
-    <input id="buy" type="button" value="Check"
-       onclick="window.location.href = '/cart.html'" />
--->
+    <button id="buy" class="btn btn-primary">Add to Cart</button>
 
 
     <script type="text/javascript" src="/data/treeinfodet.json"></script>
