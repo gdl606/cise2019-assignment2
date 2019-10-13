@@ -51,46 +51,7 @@
         </div>
     </nav>
 
-    <!------------------------------------------------Modal Login------------------------------------------------------->
-
-    <!-- Button trigger modal -->
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"> <link href="css/agency.css" rel="stylesheet">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Login to Trees</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <section id = "contact" class = "page-section" style="padding: 20px;">
-        <div>
-	<div align="center">
-		<div style="padding: 0px;" align="left">
-
-			</div>
-
-				<h1 style="color: white">Welcome To Trees!</h1>
-				<br>
-				<a href="PHPFILES/login.php" class = "btn btn-primary" style = "padding: 5px; color: black">Login</a> <br><br>
-				<a href="PHPFILES/register.php" class = "btn btn-primary" style="color: black" >Register</a> <br><br>
-				<a href="PHPFILES/forgot.php" class = "btn btn-primary" style = "color: black">Forgot Password</a>
-			</div>
-		</div>
-        </section>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Login</button>
-      </div>
-    </div>
-  </div>
-</div>
-
- <!----------------------------------------------- Hero Header ------------------------------------------------------>
+<!----------------------------------------------- Hero Header ------------------------------------------------------>
 <header class="masthead">
     <div class="container">
         <div class="intro-text">
@@ -116,11 +77,11 @@
     <input id="shop" type="button" value="Continue Shopping" class = "btn btn-primary btn-m text-uppercase" onclick="window.location.href = '/shop.html'" /></center>
 
       <!-- Items in the cart -->
-        <br><center><div>
-
-            <script src="cartlist.js"></script>
-            <button id="button" class = "btn btn-primary btn-m text-uppercase" style="align-content: center"> Remove </button>
-        </div></center>
+      <center>
+        <div id = "items">
+        </div>
+      </center>
+        <script src="cartlist.js"></script>
 
 
        <!---------------------------- Footer ---------------------------->
